@@ -147,6 +147,7 @@ return {
         prompt_func_param_type = {
           go = true,
         },
+        show_success_message = false
       })
     end,
   },
