@@ -84,11 +84,6 @@
 
 return {
   {
-    "tpope/vim-surround",
-    lazy = false,
-  },
-
-  {
     "rhysd/conflict-marker.vim",
     lazy = false,
   },

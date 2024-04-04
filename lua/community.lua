@@ -12,5 +12,6 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.mini-splitjoin" },
+  { import = "astrocommunity.motion.nvim-surround" },
   -- import/override with your plugins folder
 }
