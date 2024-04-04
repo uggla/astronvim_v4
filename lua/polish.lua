@@ -56,6 +56,8 @@ vim.g["grammalecte_cli_py"] = "/usr/bin/grammalecte-cli.py"
 -- Remap terminal <esc>
 vim.cmd ":tnoremap <Esc> <C-\\><C-n>"
 
+-- selene: allow(unused_variable)
+-- selene: allow(unscoped_variables)
 P = function(v)
   print(vim.inspect(v))
   return v
