@@ -99,11 +99,6 @@ return {
   },
 
   {
-    "AndrewRadev/splitjoin.vim",
-    lazy = false,
-  },
-
-  {
     "Vimjas/vim-python-pep8-indent",
     lazy = false,
   },
