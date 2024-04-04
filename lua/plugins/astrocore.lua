@@ -32,7 +32,7 @@ return {
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
         grepprg = [[rg --hidden --glob "!.git" --no-heading --smart-case --vimgrep --follow $*]],
-        grepformat = '%f:%l:%c:%m'
+        grepformat = "%f:%l:%c:%m",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -57,6 +57,18 @@ return {
         --   desc = "Previous buffer",
         -- },
 
+        -- esc mapping
+        ["<esc>"] = { "<cmd>noh<return>", desc = "No highlight" },
+
+        -- Undotree
+        ["<leader><F5>"] = { "<cmd>UndotreeToggle<cr>", desc = "UndotreeToggle" },
+
+        -- hop mappings
+        ["²w"] = { function() require("hop").hint_words { multi_windows = true } end, desc = "HopWordMW" },
+        ["²c"] = { function() require("hop").hint_char1 { multi_windows = true } end, desc = "HopChar1MW" },
+        ["²l"] = { function() require("hop").hint_lines { multi_windows = true } end, desc = "HopLineMW" },
+        ["²p"] = { function() require("hop").hint_patterns { multi_windows = true } end, desc = "HopPatternMW" },
+
         -- mappings seen under group name "Buffer"
         ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
         ["<Leader>bD"] = {
@@ -67,13 +79,27 @@ return {
           end,
           desc = "Pick to close",
         },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
         ["<leader>r"] = { name = "Refactor" },
+
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
       },
+
+      v = {
+        -- hop mappings
+        ["²w"] = { function() require("hop").hint_words {} end, desc = "HopWord" },
+        ["²c"] = { function() require("hop").hint_char1 {} end, desc = "HopChar1" },
+        ["²l"] = { function() require("hop").hint_lines {} end, desc = "HopLine" },
+        ["²p"] = { function() require("hop").hint_patterns {} end, desc = "HopPattern" },
+
+        -- Black macchiato
+        ["<leader>lb"] = { ":!black-macchiato<CR><CR>", desc = "Black macchiato" },
+      },
+
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
