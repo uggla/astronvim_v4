@@ -104,8 +104,6 @@ return {
     on_attach = function(client, bufnr)
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
-      require("lsp-inlayhints").setup()
-      require("lsp-inlayhints").on_attach(client, bufnr, false)
     end,
 
     ["server-settings"] = {

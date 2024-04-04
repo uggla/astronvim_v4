@@ -113,9 +113,9 @@ return {
     "Vimjas/vim-python-pep8-indent",
     lazy = false
   },
-  {
-    "lvimuser/lsp-inlayhints.nvim",
-  },
+  -- {
+  --   "lvimuser/lsp-inlayhints.nvim",
+  -- },
   {
     'smoka7/hop.nvim',
     config = function()
