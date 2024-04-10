@@ -23,6 +23,14 @@ vim.api.nvim_create_autocmd("FileType", {
   command = "setlocal colorcolumn=79",
 })
 
+vim.api.nvim_create_augroup("columns-gitcommit", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  desc = "Add colorcolums at 72",
+  group = "columns-python",
+  pattern = { "gitcommit" },
+  command = "setlocal colorcolumn=72",
+})
+
 vim.g["grammalecte_cli_py"] = "/usr/bin/grammalecte-cli.py"
 
 -- Remap terminal <esc>
