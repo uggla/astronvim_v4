@@ -23,14 +23,6 @@ vim.api.nvim_create_autocmd("FileType", {
   command = "setlocal colorcolumn=79",
 })
 
-vim.api.nvim_create_augroup("remember-cursor-position", { clear = true })
-vim.api.nvim_create_autocmd("BufReadPost", {
-  desc = "Remember cursor position",
-  group = "remember-cursor-position",
-  pattern = "*",
-  command = [[ if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif ]],
-})
-
 vim.g["grammalecte_cli_py"] = "/usr/bin/grammalecte-cli.py"
 
 -- Remap terminal <esc>
