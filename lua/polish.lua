@@ -45,3 +45,9 @@ end
 
 -- Disable auto_hlsearch
 vim.on_key(function() end, vim.api.nvim_create_namespace "auto_hlsearch")
+
+-- Rebind keys for conflict marker temporary fixing a bug
+vim.keymap.set("n", "<leader>xo", ":ConflictMarkerOurselves<CR>)")
+vim.keymap.set("n", "<leader>xt", ":ConflictMarkerThemselves<CR>)")
+vim.keymap.set("n", "<leader>xb", ":ConflictMarkerBoth<CR>")
+vim.keymap.set("n", "<leader>x0", ":ConflictMarkerNone<CR>)")

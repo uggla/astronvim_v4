@@ -87,7 +87,13 @@ return {
     "rhysd/conflict-marker.vim",
     lazy = false,
   },
-
+  -- {
+  -- Try alternative to conflict-marker.vim
+  --   "akinsho/git-conflict.nvim",
+  --   version = "*",
+  --   config = true,
+  --   lazy = false,
+  -- },
   {
     "bronson/vim-trailing-whitespace",
     lazy = false,
