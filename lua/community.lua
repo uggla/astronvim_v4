@@ -10,6 +10,7 @@ return {
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.mini-splitjoin" },
   { import = "astrocommunity.motion.nvim-surround" },
