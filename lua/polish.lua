@@ -17,10 +17,10 @@ vim.filetype.add {
 
 vim.api.nvim_create_augroup("columns-python", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-  desc = "Add colorcolums at 79",
+  desc = "Add colorcolums at 80",
   group = "columns-python",
   pattern = { "python", "rst" },
-  command = "setlocal colorcolumn=79",
+  command = "setlocal colorcolumn=80",
 })
 
 vim.api.nvim_create_augroup("columns-gitcommit", { clear = true })
