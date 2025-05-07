@@ -104,7 +104,7 @@ return {
         ["²p"] = { function() require("hop").hint_patterns {} end, desc = "HopPattern" },
 
         -- Black macchiato
-        ["<leader>lb"] = { ":!black-macchiato -l 80<CR><CR>", desc = "Black macchiato" },
+        ["<leader>lb"] = { ":!black-macchiato -l 79<CR><CR>", desc = "Black macchiato" },
       },
 
       t = {
