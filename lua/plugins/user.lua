@@ -126,13 +126,71 @@ return {
     lazy = false,
   },
 
+  -- Old codeium plugin
+  -- {
+  --   "Exafunction/codeium.vim",
+  --   config = function()
+  --     vim.keymap.set("i", "<M-a>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
+  --     vim.keymap.set("i", "<M-;>", function() return vim.fn["codeium#CycleCompletions"](1) end, { expr = true })
+  --     vim.keymap.set("i", "<M-,>", function() return vim.fn["codeium#CycleCompletions"](-1) end, { expr = true })
+  --     vim.keymap.set("i", "<M-q>", function() return vim.fn["codeium#Clear"]() end, { expr = true })
+  --   end,
+  -- },
+
+  -- {
+  --   "Exafunction/windsurf.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "hrsh7th/nvim-cmp",
+  --   },
+  --   config = function() require("codeium").setup {} end,
+  -- },
+
   {
-    "Exafunction/codeium.vim",
-    config = function()
-      vim.keymap.set("i", "<M-a>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
-      vim.keymap.set("i", "<M-;>", function() return vim.fn["codeium#CycleCompletions"](1) end, { expr = true })
-      vim.keymap.set("i", "<M-,>", function() return vim.fn["codeium#CycleCompletions"](-1) end, { expr = true })
-      vim.keymap.set("i", "<M-q>", function() return vim.fn["codeium#Clear"]() end, { expr = true })
-    end,
+    "Exafunction/windsurf.nvim",
+    dependencies = {
+      {
+        "nvim-lua/plenary.nvim",
+        "AstroNvim/astroui",
+        ---@type AstroUIOpts
+        opts = {
+          icons = {
+            Codeium = "",
+          },
+        },
+      },
+      {
+        "AstroNvim/astrocore",
+        ---@param opts AstroCoreOpts
+        opts = function(_, opts)
+          return require("astrocore").extend_tbl(opts, {
+            mappings = {
+              n = {
+                ["<Leader>;"] = {
+                  desc = require("astroui").get_icon("Codeium", 1, true) .. "Codeium",
+                },
+                ["<Leader>;o"] = {
+                  desc = "Open Chat",
+                  function() vim.cmd "Codeium Chat" end,
+                },
+              },
+            },
+          })
+        end,
+      },
+      {
+        "saghen/blink.cmp",
+        opts = {
+          sources = {
+            default = { "lsp", "path", "snippets", "buffer", "codeium" },
+            providers = {
+              codeium = { name = "Codeium", module = "codeium.blink", async = true },
+            },
+          },
+        },
+      },
+    },
+
+    config = function() require("codeium").setup {} end,
   },
 }
