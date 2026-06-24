@@ -1,17 +1,24 @@
 -- Customize Treesitter
+-- Treesitter customizations are handled with AstroCore
+-- as nvim-treesitter simply provides a download utility for parsers
 
 ---@type LazySpec
 return {
-  "nvim-treesitter/nvim-treesitter",
+  "AstroNvim/astrocore",
+  ---@type AstroCoreOpts
   opts = {
-    ensure_installed = {
-      "html",
-      "json",
-      "lua",
-      "python",
-      "rust",
-      "vim",
-      -- add more arguments for adding more treesitter parsers
+    treesitter = {
+      highlight = true,
+      indent = true,
+      auto_install = true,
+      ensure_installed = {
+        "html",
+        "json",
+        "lua",
+        "python",
+        "rust",
+        "vim",
+      },
     },
   },
 }

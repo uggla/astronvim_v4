@@ -12,12 +12,11 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.ansible" },
+  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.mini-splitjoin" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.git.blame-nvim" },
-  -- Next plugin is not working because it does not use blink.cmp
-  -- but it might be updated soon.
+  -- { import = "astrocommunity.completion.avante-nvim" },
   -- { import = "astrocommunity.completion.codeium-nvim" },
-  -- import/override with your plugins folder
 }
